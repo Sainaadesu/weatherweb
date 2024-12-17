@@ -9,6 +9,7 @@ const app = express(); // `app` хувьсагчийг зөвхөн нэг уд�
 // Зөвшөөрөгдсөн гарал үүсэлүүд
 const allowedOrigins = ['https://perweb-lnao.onrender.com'];
 
+// CORS тохируулах
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -22,6 +23,14 @@ app.use(cors({
 
 // Body Parser тохируулах
 app.use(bodyParser.json());
+
+// Статик файлуудыг serve хийх
+app.use(express.static(path.join(__dirname))); // Үндсэн фолдерыг serve хийх
+
+// Root замд үндсэн HTML хуудсыг үзүүлэх
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Nodemailer тохируулах
 const transporter = nodemailer.createTransport({
@@ -53,13 +62,8 @@ app.post('/send-email', (req, res) => {
     });
 });
 
-// Root замд үндсэн HTML хуудсыг үзүүлэх
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html')); // index.html серверийн үндсэн хавтсанд байгаа гэж үзнэ
-});
-
 // Серверээ ажиллуулах
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Сервер ${PORT} порт дээр ажиллаж байна`);
 });
