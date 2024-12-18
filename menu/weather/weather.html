@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-
-        .weather {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../header.css"> <!-- header css-->
+    <script src="../../header.js"></script> <!-- header javascript-->
+    <link rel="stylesheet" href="menu/weather/weather_main.css"> <!-- Тухайн хуудасны css-->
+    <script src="menu/weather/weather_main.js\"></script><!-- Тухайн хуудасны js-->
 </head>
 
 <body>
+    <div class="top_head">
+        <div class="header">
+            <div class="header_name">
+                <a href="../../index.html" class="hname">PerWeb</a>
+            </div>
+            <div class="header_side">
+                <button class="header_menu" onclick="menu_extends()" >Цэс</button>
+                <div class="header_login">Нэвтрэх/Бүртгүүлэх</div>
+            </div>
+        </div>
+        <hr>
+        <div class="menu_extend">
+        </div>
+    </div>
+
     <h1>Цаг агаарын мэдээлэл</h1>
     <label for="city">Хотын нэр:</label>
     <input type="text" id="city" placeholder="Жишээ: Ulaanbaatar">
