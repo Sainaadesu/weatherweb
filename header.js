@@ -4,7 +4,7 @@ function menu_extends(){
     let menus = document.querySelector(".menu_extend");
     if((count%2)!=0){
         menus.innerHTML = `
-                <a class = "link" href="/menu/weather/weather.html"
+                <a class = "link" href="PersonalWeb/menu/weather/weather.html"
 >Цаг агаар харах</a>
                 <a class = "link" href="">!#^#%&*@()$@^%!</a>
                 <a class = "link" href="">Бусад</a>`;
