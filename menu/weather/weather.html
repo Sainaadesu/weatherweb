@@ -51,6 +51,23 @@
             const registeredEmails = [];
             let currentWeatherData = null;
 
+            function registerEmail() {
+                const email = document.getElementById('email').value;
+
+                if (!email || !/^[^\s@]+@gmail\.com$/.test(email)) {
+                    alert("Хүчинтэй Gmail хаяг оруулна уу.");
+                    return;
+                }
+
+                if (registeredEmails.includes(email)) {
+                    alert("Энэ Gmail хаяг аль хэдийн бүртгэгдсэн байна.");
+                    return;
+                }
+
+                registeredEmails.push(email);
+                alert("Gmail хаяг амжилттай бүртгэгдлээ!");
+            }
+
             async function getWeather() {
                 console.log("Амжилттай мэдээлэл авах товч дээр дарлаа")
 
@@ -82,12 +99,13 @@
                     <div class="mail_get">
                         <label for="email">Gmail хаяг:</label>
                         <input class="search_bar" type="email" id="email" placeholder="Жишээ: user@gmail.com">
-                        <button  class="button" onclick="registeredEmails(); sendEmail();" style="margin-top: 20px;">мэдээлэл илгээх</button>
+                        <button  class="button" onclick="registeredEmail(); sendEmail();" style="margin-top: 20px;">мэдээлэл илгээх</button>
                     </div>
                 `;
                 } catch (error) {
                     document.getElementById('weatherInfo').innerHTML = `<p style="color: red;">Алдаа: ${error.message}</p>`;
                 }
+
             }
 
             function sendEmail() {
