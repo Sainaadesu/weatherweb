@@ -47,3 +47,7 @@ body{
 .button:hover{
     scale: 1.05;
 }
+.menu_extend .link:hover {
+    transform: scale(1.05);
+    font-weight: bold;
+}
