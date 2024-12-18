@@ -7,7 +7,7 @@ const path = require('path'); // Замыг шийдвэрлэх модуль
 const app = express(); // `app` хувьсагчийг зөвхөн нэг удаа зарлах
 
 // Зөвшөөрөгдсөн гарал үүсэлүүд
-const allowedOrigins = ['https://perweb-lnao.onrender.com'];
+const allowedOrigins = ['https://perweb-lnao.onrender.com', 'https://sainaadesu.github.io/PersonalWeb/'];
 
 // CORS тохируулах
 app.use(cors({
