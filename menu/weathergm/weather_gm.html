@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цаг агаарын мэдээ</title>
+    <link rel="icon" type="image/png" href="../../favicon.jpg">
+
+    <!-- CSS зам -->
+    <link rel="stylesheet" href="../../header.css"> <!-- header css-->
+    <link rel="stylesheet" href="weather_main_gm.css"> <!-- Тухайн хуудасны css-->
+
+    <!-- JavaScript зам -->
+    <script src="weather_header_gm.js"></script> <!-- header javascript-->
+    <script src="weather_main_gm.js"></script> <!-- main javascript-->
+
+</head>
+
+<body>
+    <div class="top_head">
+        <div class="header">
+            <div class="header_name">
+                <a href="../../index.html" class="hname">PerWeb</a>
+            </div>
+            <div class="header_side">
+                <button class="header_menu" onclick="menu_extends()">Цэс</button>
+                <div class="header_login">Нэвтрэх/Бүртгүүлэх</div>
+            </div>
+        </div>
+        <hr>
+        <div class="menu_extend">
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_head">Цаг агаарын мэдээ</div>
+        <div class="weather_label">
+            <div class="search">
+                <label for="city">Хотын нэр:</label>
+                <input ty class="search_bar" pe="text" id="city" placeholder="Жишээ: Ulaanbaatar">
+                <button class="button" onclick="getWeather()">Мэдээлэл авах</button>
+
+            </div>
+            <div class="weather" id="weatherInfo">
+                <!-- Цаг агаарын мэдээлэл энд харагдана -->
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
