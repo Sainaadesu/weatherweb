@@ -52,6 +52,7 @@
             let currentWeatherData = null;
 
             async function getWeather() {
+                console.log("Амжилттай мэдээлэл авах товч дээр дарлаа")
                 const city = document.getElementById('city').value;
                 const API_KEY = "3b9c68fcd2427545a02bc9c44922af50"; // Таны OpenWeatherMap API түлхүүр
 
@@ -89,6 +90,7 @@
             }
 
             function sendEmail() {
+                console.log("Амжилттай мэдээлэл илгээх товч дээр дарлаа");
                 if (!currentWeatherData) {
                     alert("Эхлээд цаг агаарын мэдээлэл авна уу.");
                     return;
