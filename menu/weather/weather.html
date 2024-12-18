@@ -13,9 +13,10 @@
     <script src="header.js"></script>
 
     <link rel="stylesheet" href="../../header.css"> <!-- header css-->
-    <script src="../../header.js"></script> <!-- header javascript-->
+    <script src="weather_header.js"></script> <!-- header javascript-->
     <link rel="stylesheet" href="weather_main.css"> <!-- Тухайн хуудасны css-->
-    <script src="weather_main.js\"></script><!-- Тухайн хуудасны js-->
+    <script src="weather_main.js"></script>
+
 </head>
 
 <body>
@@ -34,20 +35,20 @@
         </div>
     </div>
     <div class="main">
-        
-        <label for="city">Хотын нэр:</label>
-        <input type="text" id="city" placeholder="Жишээ: Ulaanbaatar">
-        <button onclick="getWeather()">Мэдээлэл авах</button>
+        <div class="main_head">Цаг агаарын мэдээ</div>
+        <div class="weather_label">
+            <div class="search">
+                <label for="city">Хотын нэр:</label>
+                <input ty class="search_bar" pe="text" id="city" placeholder="Жишээ: Ulaanbaatar">
+                <button class="button" onclick="getWeather()">Мэдээлэл авах</button>
 
-        <label for="email">Gmail хаяг:</label>
-        <input type="email" id="email" placeholder="Жишээ: user@gmail.com">
-        <button onclick="registerEmail()">Бүртгүүлэх</button>
+            </div>
+            <div class="weather" id="weatherInfo">
+                <!-- Цаг агаарын мэдээлэл энд харагдана -->
+            </div>
 
-        <div class="weather" id="weatherInfo">
-            <!-- Цаг агаарын мэдээлэл энд харагдана -->
+
         </div>
-
-        <button onclick="sendEmail()" style="margin-top: 20px;">Gmail рүү мэдээлэл илгээх</button>
 
         <script>
             const registeredEmails = [];
@@ -76,29 +77,18 @@
                     document.getElementById('weatherInfo').innerHTML = `
                     <h2>Хот: ${data.name}</h2>
                     <p>Температур: ${data.main.temp}°C</p>
-                    <p>Шуудан: ${data.weather[0].description}</p>
+                    <p>Үзэгдэх тэнгэр: ${data.weather[0].description}</p>
                     <p>Салхины хурд: ${data.wind.speed} м/с</p>
+
+                    <div class="mail_get">
+                        <label for="email">Gmail хаяг:</label>
+                        <input class="search_bar" type="email" id="email" placeholder="Жишээ: user@gmail.com">
+                        <button  class="button" onclick="sendEmail()" style="margin-top: 20px;">мэдээлэл илгээх</button>
+                    </div>
                 `;
                 } catch (error) {
                     document.getElementById('weatherInfo').innerHTML = `<p style="color: red;">Алдаа: ${error.message}</p>`;
                 }
-            }
-
-            function registerEmail() {
-                const email = document.getElementById('email').value;
-
-                if (!email || !/^[^\s@]+@gmail\.com$/.test(email)) {
-                    alert("Хүчинтэй Gmail хаяг оруулна уу.");
-                    return;
-                }
-
-                if (registeredEmails.includes(email)) {
-                    alert("Энэ Gmail хаяг аль хэдийн бүртгэгдсэн байна.");
-                    return;
-                }
-
-                registeredEmails.push(email);
-                alert("Gmail хаяг амжилттай бүртгэгдлээ!");
             }
 
             function sendEmail() {
@@ -108,7 +98,7 @@
                 }
 
                 registeredEmails.forEach(email => {
-                    fetch('https://perweb-lnao.onrender.com/send-email', 'https://sainaadesu.github.io/PersonalWeb/', { // 'send-email'-ийг зөв оруулсан
+                    fetch('https://perweb-lnao.onrender.com/send-email', { // 'send-email'-ийг зөв оруулсан
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
