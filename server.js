@@ -4,16 +4,19 @@ const nodemailer = require('nodemailer');
 const cors = require('cors'); // CORS модулийг импортлох
 const path = require('path'); // Замыг шийдвэрлэх модуль
 
-const app = express(); // `app` хувьсагчийг зөвхөн нэг удаа зарлах
+const app = express(); // Express аппликэйшн
 
 // Зөвшөөрөгдсөн гарал үүсэлүүд
-const allowedOrigins = ['https://perweb-lnao.onrender.com', 'https://sainaadesu.github.io/PersonalWeb/'];
+const allowedOrigins = [
+    'https://perweb-lnao.onrender.com', 
+    'https://sainaadesu.github.io' // GitHub Pages-ийн хаяг
+];
 
 // CORS тохируулах
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
+            callback(null, true); // Зөвшөөрөх
         } else {
             console.error(`CORS бодлого: Зөвшөөрөгдөөгүй гарал үүсэл -> ${origin}`);
             callback(new Error('CORS бодлого зөрчигдсөн: Зөвшөөрөгдөөгүй гарал үүсэл'));
@@ -25,7 +28,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // Статик файлуудыг serve хийх
-app.use(express.static(path.join(__dirname))); // Үндсэн фолдерыг serve хийх
+app.use(express.static(path.join(__dirname))); // Үндсэн фолдероос статик файлууд
 
 // Root замд үндсэн HTML хуудсыг үзүүлэх
 app.get('/', (req, res) => {
@@ -62,7 +65,7 @@ app.post('/send-email', (req, res) => {
     });
 });
 
-// Серверээ ажиллуулах
+// Серверийг сонсгох
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Сервер ${PORT} порт дээр ажиллаж байна`);
