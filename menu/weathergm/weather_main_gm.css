@@ -51,3 +51,24 @@ body{
     transform: scale(1.05);
     font-weight: bold;
 }
+.devil_say{
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    width: 200px;
+    height: 55px;
+    top: -70px;
+    left: 70px;
+    padding: 10px;
+    background-color: red;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+.devil{
+    display: none;   
+}
+.devi_container{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}

@@ -1,5 +1,6 @@
 const registeredEmails = [];
 let currentWeatherData = null;
+let button_count = 0;
 
 function registerEmail() {
     const email = document.getElementById('email').value;
@@ -17,29 +18,87 @@ function registerEmail() {
     registeredEmails.push(email);
 }
 
+
 async function getWeather() {
-    console.log("Амжилттай мэдээлэл авах товч дээр дарлаа")
+    console.log("Амжилттай мэдээлэл авах товч дээр дарлаа");
 
-    const city = document.getElementById('city').value;
-    const API_KEY = "3b9c68fcd2427545a02bc9c44922af50"; // Таны OpenWeatherMap API түлхүүр
+    let move_button = document.querySelector(".button");
+    let devil = document.querySelector(".devil");
+    let text = document.querySelector(".devil_say");
+    let devil_face = document.querySelector(".devil_face");
+    button_count++;
+    console.log(button_count);
+    switch (button_count) {
+        case 1:
+            move_button.style.position = "absolute";
+            move_button.style.position = "relative";
+            move_button.style.left = "200px";
+            move_button.style.bottom = "100px";
 
-    if (!city) {
-        alert("Хотын нэрээ оруулна уу.");
-        return;
-    }
+            devil.style.display = "block";
+            devil.style.position = "absolute";
+            devil.style.left = "0px";
+            devil.style.top = "600px";
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=mn`;
+            text.textContent = "Хүүе хүүе чи арай зүгээр ингээд харчихна гэж бодоо юу? Үгүй шүү! Энд бол би эзэн харахгүй";
 
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error("Мэдээлэл олдсонгүй. Хотын нэрээ шалгана уу.");
-        }
+            break;
+        case 2:
+            move_button.style.left = "-300px";
+            move_button.style.bottom = "-400px";
+            text.textContent = "Хүүеээ хэлээд байна шдээ харуулахгүй";
+            break;
+        case 3:
+            move_button.style.left = "-400px";
+            move_button.style.bottom = "100px";
+            text.textContent = "Нэмэргүй дээ";
+            break;
+        case 4:
+            move_button.style.left = "-150px";
+            move_button.style.bottom = "-400px";
+            text.textContent = "Ямар зөрүүд юм бэ болиоч ээ";
+            break;
+        case 5:
+            move_button.style.left = "-300px";
+            move_button.style.bottom = "130px";
+            text.textContent = "Яг одоо боль доо сүүлийн анхааруулаг шүү";
+            break;
+        case 6:
+            move_button.style.left = "100px";
+            move_button.style.bottom = "140px";
+            text.textContent = "Хэлээд байна шдээ. Сүүлийнх!";
+            break;
+        default:
+            let label =document.querySelector(".weather_label");
+            text.style.backgroundColor = "#0C50F0";
+            text.textContent = "Заза энэ шалгуур байсан юм. чи тэнцлээ бурхан чамайг өршөөг";
+            devil_face.src = "weather_photo/angel.png";
+            label.style.backgroundColor="rgb(98,118,218, 0.5)";
+            document.body.style.backgroundImage = "url('weather_photo/heaven.jpg')";
+            document.body.style.backgroundSize = "cover";
+            
 
-        const data = await response.json();
-        currentWeatherData = data;
 
-        document.getElementById('weatherInfo').innerHTML = `
+            const city = document.getElementById('city').value;
+            const API_KEY = "3b9c68fcd2427545a02bc9c44922af50"; // Таны OpenWeatherMap API түлхүүр
+
+            if (!city) {
+                alert("Хотын нэрээ оруулна уу.");
+                return;
+            }
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=mn`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("Мэдээлэл олдсонгүй. Хотын нэрээ шалгана уу.");
+                }
+
+                const data = await response.json();
+                currentWeatherData = data;
+
+                document.getElementById('weatherInfo').innerHTML = `
                     <h2>Хот: ${data.name}</h2>
                     <p>Температур: ${data.main.temp}°C</p>
                     <p>Үзэгдэх тэнгэр: ${data.weather[0].description}</p>
@@ -51,11 +110,13 @@ async function getWeather() {
                         <button  class="button" onclick="registerEmail(); sendEmail();" style="margin-top: 20px;">мэдээлэл илгээх</button>
                     </div>
                 `;
-    } catch (error) {
-        document.getElementById('weatherInfo').innerHTML = `<p style="color: red;">Алдаа: ${error.message}</p>`;
-    }
-
+            } catch (error) {
+                document.getElementById('weatherInfo').innerHTML = `<p style="color: red;">Алдаа: ${error.message}</p>`;
+            }
+    };
 }
+
+
 
 function sendEmail() {
     console.log("Амжилттай мэдээлэл илгээх товч дээр дарлаа");
