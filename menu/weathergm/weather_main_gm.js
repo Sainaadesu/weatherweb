@@ -20,14 +20,16 @@ function registerEmail() {
 
 
 async function getWeather() {
-    console.log("Амжилттай мэдээлэл авах товч дээр дарлаа");
-
     let move_button = document.querySelector(".button");
     let devil = document.querySelector(".devil");
     let text = document.querySelector(".devil_say");
     let devil_face = document.querySelector(".devil_face");
     button_count++;
-    console.log(button_count);
+    
+    if (!city) {
+        alert("Хотын нэрээ оруулна уу.");
+        return;
+    }
     switch (button_count) {
         case 1:
             move_button.style.position = "absolute";
@@ -73,19 +75,14 @@ async function getWeather() {
             text.style.backgroundColor = "#0C50F0";
             text.textContent = "Заза энэ шалгуур байсан юм. чи тэнцлээ бурхан чамайг өршөөг";
             devil_face.src = "weather_photo/angel.png";
+            move_button.style.left = "0px";
+            move_button.style.bottom = "0px";
             label.style.backgroundColor="rgb(98,118,218, 0.5)";
             document.body.style.backgroundImage = "url('weather_photo/heaven.jpg')";
             document.body.style.backgroundSize = "cover";
-            
-
 
             const city = document.getElementById('city').value;
             const API_KEY = "3b9c68fcd2427545a02bc9c44922af50"; // Таны OpenWeatherMap API түлхүүр
-
-            if (!city) {
-                alert("Хотын нэрээ оруулна уу.");
-                return;
-            }
 
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=mn`;
 
@@ -96,6 +93,7 @@ async function getWeather() {
                 }
 
                 const data = await response.json();
+                console.log(data);
                 currentWeatherData = data;
 
                 document.getElementById('weatherInfo').innerHTML = `
