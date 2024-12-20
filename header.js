@@ -4,9 +4,9 @@ function menu_extends(){
     let menus = document.querySelector(".menu_extend");
     if((count%2)!=0){
         menus.innerHTML = `
-                <a class = "link" href="menu/weather/weather.html"
->Цаг агаар харах</a>
-                <a class = "link" href="menu/weathergm/weather_gm.html"">!#^#%&*@()$@^%!</a>
+                <a class = "link" href="menu/weather/weather.html">Цаг агаар харах</a>
+                <a class = "link" href="menu/weathergm/weather_gm.html">!#^#%&*@()$@^%!</a>
+                <a class="link" href="menu/develop/develop.html">Хөгжүүлэлтийн түүх</a>
                 <a class = "link" href="">Бусад</a>`;
 
         menus.style.animation="0.2s menu_out ease-out "
