@@ -5,7 +5,7 @@ function menu_extends(){
     if((count%2)!=0){
         menus.innerHTML = `
                 <a class = "link" href="weather.html">Цаг агаар харах</a>
-                <a class = "link" href="../weathergm/weather_gm.html">!#^#%&*@()$@^%!</a>
+                <a class = "link" href="../weathergm/weather_gm.html">Цаг агаар авах</a>
                 <a class = "link" href="../develop/develop.html">Хөгжүүлэлтийн түүх</a>
                 <a class = "link" href="">Бусад</a>`;
 
