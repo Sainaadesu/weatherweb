@@ -46,12 +46,18 @@ a.link:hover{
     border: 1px solid black;
     border-radius: 4px;
     padding: 7px 10px;
+    font-size: 1rem;
     background-color: black;
     color: aliceblue;
+    text-decoration: none;
 }
+.menu_extend .link:hover {
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
 .header_login:hover{
-    transform: scale(1.1);
-    
+    transform: scale(1.1);   
 }
 .hname{
     font-size: 32px;

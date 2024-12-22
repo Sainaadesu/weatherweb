@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нэвтрэх, бүртгүүлэх</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../header.css"><!-- header css -->
+
+    <script defer src="sign_header.js"></script> <!-- header javascript-->
+    <script defer src="sign_main.js"></script>
+    <link rel="stylesheet" href="sign_main.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75P1EF0DCT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-75P1EF0DCT');
+    </script>
+</head>
+
+<body>
+    <div class="top_head">
+        <div class="header">
+            <div class="header_name">
+                <img class="logo" src="../favicon.png" alt="logo icon" width="80px">
+                <a href="../index.html" class="hname">PerWeb</a>
+            </div>
+            <div class="header_side">
+                <button class="header_menu" onclick="menu_extends()">Цэс</button>
+                <a class="back" href="../index.html">Буцах</a>
+            </div>
+        </div>
+        <hr>
+        <div class="menu_extend">
+        </div>
+    </div>
+    <div class="main">
+        <div class="intro_photo">
+            <div class="intro_head">Тавтай морил</div>
+            <div class="intro_user">
+                <img src="sign_photo/user_icon.png" alt="user icon" width="200rem">
+            </div>
+            <div class="intro_article">
+                PerWeb сайтад бүртгүүлэх, нэвтэрснээр та хэрэглэгчийн мэдээлэл үүсгэж веб сайтад
+                хадгална мөн зарим зүйлсийг цаг тухайд нь авах боломжтой.
+            </div>
+        </div>
+        <div class="login">
+            <div class="login_head">
+                Нэвтрэх
+            </div>
+            <div class="login_article">
+                <form class="from_section" action="">
+                    <table>
+                        <tr>
+                            <td>
+                                Майл хаяг:
+                            </td>
+                            <td><input class="login_value login_mail" type="gmail" placeholder="user@gmail.com" ></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Нууц үг:
+                            </td>
+                            <td>
+                                <input class="login_value login_password" type="password" placeholder="12345678">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <a class="forgot_password" href="">Нууц үгээ мартсан</a><br>
+                <button class="enter_login">Нэвтрэх</button>
+            </div>
+        </div>
+        <div class="sign">
+            <div class="login_head">
+                Бүртгүүлэх
+            </div>
+            <div class="login_article">
+                <form class="from_section" action="">
+                    <table>
+                        <tr>
+                            <td>Хэрэглэгчийн нэр:</td>
+                            <td> <input class="sign_value sign_name" type="text" placeholder="Хэрэглэгч"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Майл хаяг:
+                            </td>
+                            <td><input class="sign_value sign_mail" type="gmail" placeholder="user@gmail.com" ></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Нууц үг:
+                            </td>
+                            <td>
+                                <input class="sign_value sign_password" type="password" placeholder="12345678">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Нууц үгээ дахин оруулна уу:
+                            </td>
+                            <td>
+                                <input class="sign_value sign_re_password" type="password" placeholder="12345678">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <button class="enter_sign">Бүртгүүлэх</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

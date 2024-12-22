@@ -1,0 +1,107 @@
+.back{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 7px 10px;
+    background-color: black;
+    color: aliceblue;
+    text-decoration: none;
+}
+.back:hover{
+    transform: scale(1.1);   
+}
+body{
+    background-image: url(sign_photo/sign_background.jpg);
+    background-size: cover;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.intro_photo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 1rem;
+    max-width: 25rem;
+}
+.intro_head{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.intro_user{
+    display: flex;
+    justify-content: center;
+}
+.intro_article{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+.login{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.905);
+    width: 25rem;
+    padding: 1rem;
+}
+.login_head{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.login_article{
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: white;
+}
+.from_section{
+    font-size: 1.1rem;
+}
+
+.forgot_password{
+    font-size: 0.8rem;
+    text-decoration: none;
+    
+}
+.enter_login , .enter_sign{
+    background-color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    padding: 4px 10px;
+    margin: 10px 10px 10px 0px;
+}
+.enter_login:hover, .enter_sign:hover{
+    background-color: black;
+    color: white;
+    scale: 1.1;
+    border-radius: 7px;
+}
+.login_value .sign_value{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 4px;
+}
+::placeholder{
+    padding: 5px;
+}
+.sign{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.905);
+    padding: 1rem;
+    width: 25rem;
+
+}
+tr{
+    line-height:1.5;
+}
