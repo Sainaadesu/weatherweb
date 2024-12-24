@@ -35,19 +35,19 @@ async function getWeather() {
         case 1:
             move_button.style.position = "absolute";
             move_button.style.right = "20%";
-            move_button.style.bottom = "300px";
+            move_button.style.bottom = "40%";
 
             devil.style.display = "block";
             devil.style.position = "absolute";
             devil.style.left = "0px";
-            devil.style.top = "600px";
+            devil.style.top = "60%";
 
             text.textContent = "Хүүе хүүе чи арай зүгээр ингээд харчихна гэж бодоо юу? Үгүй шүү! Энд бол би эзэн харахгүй";
 
             break;
         case 2:
             move_button.style.right = "100px";
-            move_button.style.bottom = "600px";
+            move_button.style.bottom = "70%px";
 
             text.textContent = "Хүүеээ хэлээд байна шдээ харуулахгүй";
             break;
