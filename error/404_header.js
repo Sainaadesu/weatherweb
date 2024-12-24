@@ -4,11 +4,11 @@ function menu_extends(){
     let menus = document.querySelector(".menu_extend");
     if((count%2)!=0){
         menus.innerHTML = `
-                <a class = "link" href="../weather/weather.html">Цаг агаар харах</a>
-                <a class = "link" href="weather_gm.html">Цаг агаар авах</a>
-                <a class="link" href="../develop/develop.html">Хөгжүүлэлтийн түүх</a>
-                <a class = "link" href="../../error/404.html">Бусад</a>`;
-                
+                <a class = "link" href="../menu/weather/weather.html">Цаг агаар харах</a>
+                <a class = "link" href="../menu/weathergm/weather_gm.html">Цаг агаар авах</a>
+                <a class="link" href="../menu/develop/develop.html">Хөгжүүлэлтийн түүх</a>
+                <a class = "link" href="404.html">Бусад</a>`;
+
         menus.style.animation="0.2s menu_out ease-out "
         menus.style.display="flex";
         menus.style.flexDirection="column";

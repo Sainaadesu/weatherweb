@@ -105,3 +105,95 @@ body{
 tr{
     line-height:1.5;
 }
+input{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+.user_button{
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 7rem;
+}
+
+@media (min-width: 1443px){
+    .login_head{
+        font-size: 2.5rem;
+    }
+    .meaning{
+        font-size: 2rem;
+    }
+    .forgot_password{
+        font-size: 1.6rem;
+    }
+    .aside{
+        display: flex;
+        gap: 30px;
+    }
+    .user_button{
+        font-size: 1.6rem;
+        width: 11rem;
+    }
+    input{
+        height: 1.5rem;
+        width: 11rem;
+    }
+    .section{
+        width: 31rem;
+    }
+    ::placeholder{
+        font-size: 1.1rem;
+    }
+
+}
+@media (min-width: 1031px) and (max-width: 1443px) {
+    .main{
+        margin-top: 40px;
+    }
+    .sign{
+        margin-top: 30px;
+    }
+    .meaning{
+        font-size: 2rem;
+    }
+    ::placeholder{
+        font-size: 1rem;
+    }
+    .forgot_password{
+        font-size: 1.3rem;
+    }
+    .section{
+        width: 30rem;
+    }
+    input{
+        height: 1.4rem;
+        width: 10rem;
+    }
+
+}
+@media (max-width: 1031px){
+    input{
+        width: 11rem;
+    }
+    .intro_photo{
+        display: none;
+    }
+    .main{
+        display:flex ;
+        flex-direction: column;
+        align-items: center;
+    }
+    .meaning{
+        font-size: 2rem;
+    }
+    ::placeholder{
+        font-size: 1rem;
+    }
+    .section{
+        width: 32rem;
+        margin: 30px 0px;
+    }
+    .forgot_password{
+        font-size: 1.2rem;
+    }
+}
