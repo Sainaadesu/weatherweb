@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerWeb v0.5</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="header.css"><!-- header css -->
+    <script defer src="header.js"></script> <!-- header javascript-->
+    <script defer src="index_main.js"></script>
+    <link rel="stylesheet" href="index_main.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75P1EF0DCT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-75P1EF0DCT');
+    </script>
+</head>
+
+<body>
+    <div class="top_head">
+        <div class="header">
+            <div class="header_name">
+                <img class="logo" src="favicon.png" alt="logo icon" width="80px">
+                <a href="index.html" class="hname">PerWeb</a>
+            </div>
+            <div class="header_side">
+                <button class="header_menu" onclick="menu_extends()">Цэс</button>
+                <a class="header_login" href="sign_page/sign.html">Нэвтрэх/Бүртгүүлэх</a>
+            </div>
+        </div>
+        <hr>
+        <div class="menu_extend">
         </div>
     </div>
 
@@ -13,7 +49,7 @@
                 <div class="process fill_process"></div>
                 <div class="process fill_process"></div>
                 <div class="process empty_process">
-                <div class="loading_process"></div>
+                    <div class="loading_process"></div>
                 </div>
                 <div class="process empty_process"></div>
                 <div class="process empty_process"></div>
@@ -28,3 +64,34 @@
                 </div>
                 <div class="slide_article">
                     Тухай газрынхаа цаг агаарын мэдээг харж болно.
+                </div>
+            </div>
+            <div class="intro_item item2">
+                <div class="slide_head">
+                    <a href="menu/weathergm/weather_gm.html">Цаг агаар авах</a>
+                </div>
+                <div class="slide_article">
+                    Чөтгөрөөс цаг агаарын мэдээ авах гэж үзээрэй.
+                </div>
+            </div>
+            <div class="intro_item item3">
+                <div class="slide_head">
+                    <a href="menu/develop/develop.html">Хөгжүүлэлтийн түүх</a>
+                </div>
+                <div class="slide_article">
+                    Веб сайт нь ямар ямар хувилбаруудад юу юу нэмсэн талаар харж болно.
+                </div>
+            </div>
+            <div class="intro_item item4">
+                <div class="slide_head">
+                    <a href="menu/weather/weather.html">Бусад</a>
+                </div>
+                <div class="slide_article">
+                    Одоогоор хоосон хуудас нь байхгүй байгаа.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
