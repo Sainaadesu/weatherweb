@@ -35,7 +35,7 @@ async function getWeather() {
         case 1:
             move_button.style.position = "absolute";
             move_button.style.right = "20%";
-            move_button.style.bottom = "40%";
+            move_button.style.top = "40%";
 
             devil.style.display = "block";
             devil.style.position = "absolute";
@@ -47,34 +47,34 @@ async function getWeather() {
             break;
         case 2:
             move_button.style.right = "100px";
-            move_button.style.bottom = "70%px";
+            move_button.style.top = "70%px";
 
             text.textContent = "Хүүеээ хэлээд байна шдээ харуулахгүй";
             break;
         case 3:
             
             move_button.style.right = "20%";
-            move_button.style.bottom = "80%";
+            move_button.style.top = "80%";
             text.textContent = "Нэмэргүй дээ";
             break;
         case 4:
             move_button.style.right = "50%";
-            move_button.style.bottom = "50%";
+            move_button.style.top = "50%";
             text.textContent = "Ямар зөрүүд юм бэ болиоч ээ";
             break;
         case 5:
             move_button.style.right = "30%";
-            move_button.style.bottom = "20%";
+            move_button.style.top = "20%";
             text.textContent = "Яг одоо боль доо сүүлийн анхааруулаг шүү";
             break;
         case 6:
             move_button.style.right = "70%";
-            move_button.style.bottom = "80%";
+            move_button.style.top = "80%";
             text.textContent = "Хэлээд байна шдээ. Сүүлийнх!";
             break;
         default:
             move_button.style.right = "0%";
-            move_button.style.bottom = "0%";
+            move_button.style.top = "0%";
 
             let label =document.querySelector(".weather_label");
             text.style.backgroundColor = "#0C50F0";
