@@ -35,7 +35,7 @@ async function getWeather() {
         case 1:
             move_button.style.position = "absolute";
             move_button.style.right = "20%";
-            move_button.style.bottom = "40%";
+            move_button.style.bottom = "50%";
 
             devil.style.display = "block";
             devil.style.position = "absolute";
