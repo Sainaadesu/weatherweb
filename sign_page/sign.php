@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $servername = "sql12.freesqldatabase.com";
 $username = "sql12757350";
 $password = "EsQ44D4QPN";
