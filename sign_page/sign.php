@@ -11,9 +11,9 @@ if ($conn->connect_error) {
 }
 else{
     if($_SERVER["REQUEST_METHOD"]=="post"){
-        $uname = $_POST("uname");
-        $upassword = $_POST("upassword");
-        $upasswordconfic = $_POST("upasswordconfig");
+        $uname = $_POST["uname"];
+        $upassword = $_POST["upassword"];
+        $upasswordconfic = $_POST["upasswordconfig"];
 
         if($upassword != $upasswordconfic){
             echo "Хэрэглэгчийн нууц үг таарахгүй байна";
