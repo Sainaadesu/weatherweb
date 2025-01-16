@@ -13,7 +13,15 @@ else{
     if($_SERVER["REQUEST_METHOD"]=="post"){
         $uname = $_POST("uname");
         $upassword = $_POST("upassword");
-        echo "<br><br>$uname, $upassword";
+        $upasswordconfic = $_POST("upasswordconfig");
+
+        if($upassword != $upasswordconfic){
+            echo "Хэрэглэгчийн нууц үг таарахгүй байна";
+        }
+        else{
+            echo "<br><br>$uname, $upassword<br>";
+            echo "Амжилттай";
+        }
     }
     echo "success";
 }
