@@ -7,10 +7,10 @@ $dbname = "sql12757350";
 $conn = new mysqli ($servername, $username, $password, $dbname);    
 
 if ($conn->connect_error) {
-    die("Өгөгдлийн сангмйн холболтонд алдаа гарлаа");
+    die("Өгөгдлийн сангийн холболтонд алдаа гарлаа: " . $conn->connect_error);
 }
 else{
-    if($_SERVER["REQUEST_METHOD"]=="post"){
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
         $uname = $_POST["uname"];
         $upassword = $_POST["upassword"];
         $upasswordconfic = $_POST["upasswordconfig"];
@@ -25,7 +25,5 @@ else{
     }
     echo "success";
 }
-
-
-
+$conn->close();
 ?>
