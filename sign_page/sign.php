@@ -10,6 +10,11 @@ if ($conn->connect_error) {
     die("Өгөгдлийн сангмйн холболтонд алдаа гарлаа");
 }
 else{
+    if($_SERVER["REQUEST_METHOD"]=="post"){
+        $uname = $_POST("uname");
+        $upassword = $_POST("upassword");
+        echo "<br><br>$uname, $upassword";
+    }
     echo "success";
 }
 
